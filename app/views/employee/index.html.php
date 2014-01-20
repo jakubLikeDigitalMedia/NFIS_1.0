@@ -1,0 +1,1 @@
+view for index action in Employee </br> path: /home/wizard/web_development/MyMVC/app/views/employee/index.html.php

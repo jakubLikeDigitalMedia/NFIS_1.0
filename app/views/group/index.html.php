@@ -1,0 +1,1 @@
+view for index action in Group </br> path: /Users/jacob/web_development/NFIS_1.0/app/views/group/index.html.php

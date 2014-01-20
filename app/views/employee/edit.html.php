@@ -1,0 +1,1 @@
+view for edit action in Employee </br> path: /home/wizard/web_development/MyMVC/app/views/employee/edit.html.php

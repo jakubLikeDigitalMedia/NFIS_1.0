@@ -1,0 +1,1 @@
+view for destroy action in Group </br> path: /Users/jacob/web_development/NFIS_1.0/app/views/group/destroy.html.php

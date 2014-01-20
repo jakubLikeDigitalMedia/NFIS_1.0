@@ -1,0 +1,1 @@
+view for destroy action in Employee </br> path: /home/wizard/web_development/MyMVC/app/views/employee/destroy.html.php

@@ -1,0 +1,19 @@
+
+
+form li{
+    list-style-type: none;
+}
+
+.hide{
+    display: none;
+}
+
+.add-block .new-block{
+    padding: 10px;
+    border: solid 1px black;
+}
+
+.add-block select{
+
+    margin-right: 15px;
+}

@@ -1,0 +1,1 @@
+view for create action in Employee </br> path: /home/wizard/web_development/MyMVC/app/views/employee/create.html.php
