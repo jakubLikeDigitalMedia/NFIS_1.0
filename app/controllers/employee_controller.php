@@ -50,7 +50,17 @@ class Employee_Controller extends App_Controller{
     }
     
     public function add_employee_to_group() {
-        echo 'add_employee_to_group action';
+        $formActionLink = $this->getModel()->getProperty('add_employee_to_group');
+        
+        if(!empty($_POST['group_employee']) && isset($_POST['add_to_group'])){
+        $employees = $_POST['group_employee'];
+        $group_id = $_POST['add_to_group'];
+        $employee->updateMultipleValues($employees, $group_id);
+    }
+
+    if(!empty($_POST['category']) && !empty($_POST['filter_by'])){
+        echo $employee->getEmployeesList($_POST['category'], $_POST['filter_by']);
+    }
     }
 
     /*

@@ -102,31 +102,31 @@ class Employee_Model extends Model_Abstract{
     $locationCls = new Location_Model();
     $departmentCls = new Department_Model();
     $employmentCls = new Employment_Model();
-    
-    $where = ' WHERE ';
-    switch($category){
-          case 'id_group':
-              if($filter_by == "all"){
-                  $where = '';
-              }else{
-                  $where .= $groupCls->getSqlQueryField($groupCls::TITLE) . "='$filter_by'";
-              }
-                break;
-          case 'id_brand':
-              $where .= $brandCls->getSqlQueryField($brandCls::TITLE) . "='$filter_by'";
-                break;
-          case 'id_type':
-              $where .= $positionCls->getSqlQueryField($positionCls::TITLE) . "='$filter_by'";
-                break;
-          case 'id_location':
-              $where .= $locationCls->getSqlQueryField($locationCls::TITLE) . "='$filter_by'";
-                break;
-          case 'id_dprmt':
-              $where .= $departmentCls->getSqlQueryField($departmentCls::TITLE) . "='$filter_by'";
-                break;
-          default:
-              $where .= $groupCls->getSqlQueryField($groupCls::TITLE) . "='default'";
-      }
+    $where = '';
+//    $where = ' WHERE ';
+//    switch($category){
+//          case 'id_group':
+//              if($filter_by == "all"){
+//                  $where = '';
+//              }else{
+//                  $where .= $groupCls->getSqlQueryField($groupCls::TITLE) . "='$filter_by'";
+//              }
+//                break;
+//          case 'id_brand':
+//              $where .= $brandCls->getSqlQueryField($brandCls::TITLE) . "='$filter_by'";
+//                break;
+//          case 'id_type':
+//              $where .= $positionCls->getSqlQueryField($positionCls::TITLE) . "='$filter_by'";
+//                break;
+//          case 'id_location':
+//              $where .= $locationCls->getSqlQueryField($locationCls::TITLE) . "='$filter_by'";
+//                break;
+//          case 'id_dprmt':
+//              $where .= $departmentCls->getSqlQueryField($departmentCls::TITLE) . "='$filter_by'";
+//                break;
+//          default:
+//              $where .= $groupCls->getSqlQueryField($groupCls::TITLE) . "='default'";
+//      }
 
             $query = "SELECT " . $this->getSqlQueryField($this::NAME) . " AS 'name',
             " . $this->getSqlQueryField($this::PRM_KEY) . " AS 'empl_id',

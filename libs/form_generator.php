@@ -80,7 +80,10 @@ class FormGenerator{
         $error = $this->getOption($element, 'error');
         $class = $this->getOption($element, 'class');
         $wrapper = $this->getOption($element, 'wrapper');
-
+        $attrs = $this->getOption($element, 'attrs');
+        $id = $this->getOption($element, 'id');
+        $optionsTextValues = $this->getOption($element, 'textValues');
+        
         $multiple = $this->getOption($element, 'multiple');
         $multiple = (!empty($multiple))? '[]': '';
 
@@ -90,7 +93,7 @@ class FormGenerator{
         $size = $this->getOption($element, 'size');
         $size = (empty($size))? $this->textFieldSize: $size;
 
-        $id = "{$this->name}_{$element['name']}";
+        $id = (empty($id))?"{$this->name}_{$element['name']}":$id;
         $HTML = "<label for=\"$id\" class=\"{$this->labelClass}\">{$element['label']}</label>";
         $HTML .= (!empty($error))? "<div class=\"error\">$error</div>": '';
         switch($element['type']){
@@ -100,14 +103,14 @@ class FormGenerator{
                 return $HTML;
                 break;
             case 'select':
-                $HTML .= "<select id=\"$id\" class=\"$class\" name=\"{$element['name']}$multiple\">";
+                $HTML .= "<select id=\"$id\" class=\"$class\" name=\"{$element['name']}$multiple\" $attrs>";
                 $options = $element['value']['values'];
                 if (is_array($options)){
                     $initVal = (empty($options))? 'No options are available': 'Select value';
-                    $selectOptions = '<option value="0">'.$initVal.'</option>';
+                    $selectOptions = '<option value="'.(($optionsTextValues=="true")?'all':0).'">'.$initVal.'</option>';
                     $selected = $element['value']['selected'];
                     foreach($options as $key => $option){
-                        $selectOptions .= (!empty($selected) && $selected == $key)? '<option value="'.$key.'" selected="selected">'.$option.'</option>': '<option value="'.$key.'">'.$option.'</option>';
+                        $selectOptions .= (!empty($selected) && $selected == $key)? '<option value="'.(($optionsTextValues=="true")?$option:$key).'" selected="selected">'.$option.'</option>': '<option value="'.(($optionsTextValues=="true")?$option:$key).'">'.$option.'</option>';
                     }
                     return $HTML .= $selectOptions.'</select>';
                 }
