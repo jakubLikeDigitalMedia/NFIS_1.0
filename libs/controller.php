@@ -18,6 +18,8 @@ class Controller {
 
     public $actionLink;
 
+    private $params = NULL;
+
     public function __construct(){
         $this->controllerName = str_replace('_Controller', '', get_class($this));
         $this->controllerFileName = strtolower($this->controllerName);
@@ -57,8 +59,13 @@ class Controller {
     public function getParams(){
         $sammy = Sammy::instance();
         $uri = explode('/',$sammy->uri);
-        return (count($uri) > 2)? array_slice($uri, 3): NULL;
+        $this->params = (count($uri) > 2)? array_slice($uri, 3): NULL;
+        return $this->params;
 
+    }
+
+    public function getParam($index){
+        return (isset($this->params[$index - 1]))? trim($this->params[$index - 1]): NULL;
     }
 
 
