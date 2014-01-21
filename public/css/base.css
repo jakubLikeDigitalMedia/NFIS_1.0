@@ -1,19 +1,25 @@
+@import url(_reset_min.css);
+@import url(bootstrap.css);
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20-Jan-2014, 10:48:00
+    Author     : Dzamil
+*/
+#filter_by_value, #filter_by_value li {
+  display: inline-block; }
 
+#add_employee_to_group {
+  width: 800px;
+  padding-top: 20px; }
 
-form li{
-    list-style-type: none;
-}
+#upload_media, #crop_image {
+  display: none; }
 
-.hide{
-    display: none;
-}
-
-.add-block .new-block{
-    padding: 10px;
-    border: solid 1px black;
-}
-
-.add-block select{
-
-    margin-right: 15px;
-}
+#images_tab ul li {
+  display: inline-block;
+  float: left;
+  padding-left: 20px; }

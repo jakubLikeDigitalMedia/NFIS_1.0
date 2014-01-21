@@ -48,6 +48,10 @@ class Employee_Controller extends App_Controller{
         // delete a record
         echo 'destroy action';
     }
+    
+    public function add_employee_to_group() {
+        echo 'add_employee_to_group action';
+    }
 
     /*
      * Create Employee account

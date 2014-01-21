@@ -92,26 +92,61 @@ class Employee_Model extends Model_Abstract{
 
     }
 
-    public function getEmployee_ModelsList($new_group = ''){
-        $query = "SELECT `". E_TABLE . "`.`". E_NAME ."` AS 'name',
-            `". E_TABLE ."`.`". E_PRM_KEY ."` AS 'empl_id',
-            `". E_TABLE ."`.`". E_SURNAME ."` AS 'surname',
-            `". E_TABLE ."`.`". E_GROUP ."` AS 'group_id',
-            `". G_TABLE ."`.`". G_TITLE ."` AS 'group',
-            `". B_TABLE ."`.`". B_TITLE ."` AS 'brand',
-            `". P_TABLE ."`.`". P_TITLE ."` AS 'position',
-            `". L_TABLE ."`.`". L_TITLE ."` AS 'location',
-            `". DE_TABLE ."`.`". DE_TITLE ."` AS 'department'
-            FROM ". EMPL_TABLE ." LEFT JOIN ". E_TABLE ." ON `". E_TABLE ."`.`". E_PRM_KEY ."` = `". EMPL_TABLE ."`.`". EMPL_EMPLOYEE . "`
-             LEFT JOIN ". B_TABLE ." ON `". B_TABLE ."`.`". B_PRM_KEY ."` = `". EMPL_TABLE ."`.`". EMPL_BRAND . "`
-             LEFT JOIN ". P_TABLE ." ON `". P_TABLE ."`.`". P_PRM_KEY ."` = `". EMPL_TABLE ."`.`". EMPL_POSITION . "`
-             LEFT JOIN ". L_TABLE ." ON `". L_TABLE ."`.`". L_PRM_KEY ."` = `". EMPL_TABLE ."`.`". EMPL_LOCATION . "`
-             LEFT JOIN ". DE_TABLE ." ON `". DE_TABLE ."`.`". DE_PRM_KEY ."` = `". EMPL_TABLE ."`.`". EMPL_DEPARTMENT . "`
-             LEFT JOIN `". G_TABLE ."` ON `". G_TABLE ."`.`". G_PRM_KEY ."` = `". E_TABLE ."`.`". E_GROUP . "`
-            " . ((!empty($new_group))?" WHERE `" . E_TABLE."`.`".E_GROUP ."`='$new_group'":" WHERE `" . G_TABLE."`.`".G_TITLE ."`='default'");
+    public function getEmployee_ModelsList($category = '', $filter_by = ''){
+        if($filter_by == "Select_value"){
+         $category = '';
+    }
+    $groupCls = new Group_Model();
+    $brandCls = new Brand_Model();
+    $positionCls = new Position_Model();
+    $locationCls = new Location_Model();
+    $departmentCls = new Department_Model();
+    $employmentCls = new Employment_Model();
+    
+    $where = ' WHERE ';
+    switch($category){
+          case 'id_group':
+              if($filter_by == "all"){
+                  $where = '';
+              }else{
+                  $where .= $groupCls->getSqlQueryField($groupCls::TITLE) . "='$filter_by'";
+              }
+                break;
+          case 'id_brand':
+              $where .= $brandCls->getSqlQueryField($brandCls::TITLE) . "='$filter_by'";
+                break;
+          case 'id_type':
+              $where .= $positionCls->getSqlQueryField($positionCls::TITLE) . "='$filter_by'";
+                break;
+          case 'id_location':
+              $where .= $locationCls->getSqlQueryField($locationCls::TITLE) . "='$filter_by'";
+                break;
+          case 'id_dprmt':
+              $where .= $departmentCls->getSqlQueryField($departmentCls::TITLE) . "='$filter_by'";
+                break;
+          default:
+              $where .= $groupCls->getSqlQueryField($groupCls::TITLE) . "='default'";
+      }
 
-        $dbc = new DbQueryManager();
-        $result = $dbc->selectQuery($query, E_PRM_KEY);
+            $query = "SELECT " . $this->getSqlQueryField($this::NAME) . " AS 'name',
+            " . $this->getSqlQueryField($this::PRM_KEY) . " AS 'empl_id',
+            " . $this->getSqlQueryField($this::SURNAME) . " AS 'surname',
+            " . $this->getSqlQueryField($this::GROUP) . " AS 'group_id',
+            " . $groupCls->getSqlQueryField($groupCls::TITLE) . " AS 'group',
+            " . $brandCls->getSqlQueryField($brandCls::TITLE) . " AS 'brand',
+            " . $positionCls->getSqlQueryField($positionCls::TITLE) . " AS 'position',
+            " . $locationCls->getSqlQueryField($locationCls::TITLE) . " AS 'location',
+            " . $departmentCls->getSqlQueryField($departmentCls::TITLE) . " AS 'department'
+            FROM ". $employmentCls::TABLE ." LEFT JOIN ". $this::TABLE ." ON " . $this->getSqlQueryField($this::PRM_KEY) . " = " . $employmentCls->getSqlQueryField($employmentCls::EMPLOYEE) . "
+             LEFT JOIN ". $brandCls::TABLE ." ON " . $brandCls->getSqlQueryField($brandCls::PRM_KEY) . " = " . $employmentCls->getSqlQueryField($employmentCls::BRAND) . "
+             LEFT JOIN ". $positionCls::TABLE ." ON " . $positionCls->getSqlQueryField($positionCls::PRM_KEY) . " = " . $employmentCls->getSqlQueryField($employmentCls::POSITION) . "
+             LEFT JOIN ". $locationCls::TABLE ." ON " . $locationCls->getSqlQueryField($locationCls::PRM_KEY) . " = " . $employmentCls->getSqlQueryField($employmentCls::LOCATION) . "
+             LEFT JOIN ". $departmentCls::TABLE ." ON " . $departmentCls->getSqlQueryField($departmentCls::PRM_KEY) . " = " . $employmentCls->getSqlQueryField($employmentCls::DEPARTMENT) . "
+             LEFT JOIN `". $groupCls::TABLE ."` ON " . $groupCls->getSqlQueryField($groupCls::PRM_KEY) . " = " . $this->getSqlQueryField($this::GROUP) . "
+            " . $where;
+            
+        $dbc = new QueryHandler();
+        $result = $dbc->selectQuery($query, $this::PRM_KEY);
         $resultCopy = $result;
         foreach($result as $id => $value){
             $resultCopy[$id]['add'] = "<input type='checkbox' name='group_employee[]' value='$id'>";
