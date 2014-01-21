@@ -50,6 +50,7 @@ class QueryHandler {
     }
 
     private function escapeValues($valuesArray){
+        //die(var_dump($valuesArray));
         $columns = array();
         $values = array();
         foreach($valuesArray as $column => $value){
@@ -69,17 +70,16 @@ class QueryHandler {
         //die(var_dump($options));
         $query = '';
 
-        list($columns, $values) = $this->escapeValues($insertValues);
-        $query = "INSERT INTO $table (".implode(',', $columns).") VALUES ('".implode("','", $values)."')";
-        
-
         if (isset($options['multiple_insert']) && $options['multiple_insert'] === TRUE){
             $query = $this->createMultipleInsertQuery($insertValues, $table);
         }
-
-        if (isset($options['check_parent']) && $options['check_parent'] === FALSE){
+        elseif (isset($options['check_parent']) && $options['check_parent'] === FALSE){
             $query = 'SET FOREIGN_KEY_CHECKS = 0; '.$query;
             if ($this->multiQuery($query))  return $this->conn->insert_id; // last inserted id
+        }
+        else{
+            list($columns, $values) = $this->escapeValues($insertValues);
+            $query = "INSERT INTO $table (".implode(',', $columns).") VALUES ('".implode("','", $values)."')";
         }
         
         //die(var_dump($query));

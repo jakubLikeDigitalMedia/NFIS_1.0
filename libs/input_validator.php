@@ -10,6 +10,7 @@ class InputValidator extends GUMP{
 
     private $predefRules = array(
         'name' => 'required|alpha_with_space|max_len,128',
+        'title' => 'required|alpha_with_space|max_len,128',
         'email' => 'required|valid_email',
         'DOB' => 'required|DOB',
         'intNoZeroReq' => 'required|int_no_zero',
@@ -30,7 +31,8 @@ class InputValidator extends GUMP{
         'validate_required' => 'This field is required',
         'validate_integer' => 'Value must be integer',
         'validate_max_len' => 'Value or string must be max ? characters long',
-        'validate_int_no_zero' => 'Select value'
+        'validate_int_no_zero' => 'Select value',
+        'validate_unique' => 'This title already exists'
     );
 
     /*
@@ -51,7 +53,7 @@ class InputValidator extends GUMP{
             return;
         }
 
-        $passes = preg_match('/[a-zA-Z\s]+/', $input[$field]);
+        $passes = preg_match('/^[a-zA-Z\s]+$/', $input[$field]);
 
         if(!$passes) {
             return array(
@@ -103,6 +105,19 @@ class InputValidator extends GUMP{
 
     }
 
+    public function validate_unique($field, $input, $param = NULL){
+
+        if(!isset($input[$field]) || empty($input[$field]))
+        {
+            return;
+        }
+
+        $model = new $param();
+        if ($model->recordExist($model::TITLE,$input[$field]))
+            return $this->getResultArray($field, $input[$field], __FUNCTION__, $param);
+
+    }
+
     private function getResultArray($field, $value, $func, $param){
         return array(
             'field' => $field,
@@ -111,6 +126,20 @@ class InputValidator extends GUMP{
             'param' => $param
         );
 
+    }
+
+    private function getErrors($employeeDetails, $validationRules){
+        $validationResult = $this->validate($employeeDetails, $validationRules);
+        //die(var_dump($validationResult));
+        if (!is_array($validationResult)) return NULL;
+        else{
+            $errorMessages = array();
+            foreach ($validationResult as $resultField) {
+                $errorMessages[$resultField['field']] = (!empty($resultField['param']))? str_replace('?', $resultField['param'], $this->errorMessages[$resultField['rule']]): $errorMessages[$resultField['field']] = $this->errorMessages[$resultField['rule']];
+                $errorMessages[$resultField['field']] = "<b>{$errorMessages[$resultField['field']]}</b>";
+            }
+            return $errorMessages;
+        }
     }
 
     public function validateEmployee($employeeDetails){
@@ -159,19 +188,17 @@ class InputValidator extends GUMP{
 
     }
 
-    private function getErrors($employeeDetails, $validationRules){
-        $validationResult = $this->validate($employeeDetails, $validationRules);
-        //die(var_dump($validationResult));
-        if (!is_array($validationResult)) return NULL;
-        else{
-            $errorMessages = array();
-            foreach ($validationResult as $resultField) {
-                $errorMessages[$resultField['field']] = (!empty($resultField['param']))? str_replace('?', $resultField['param'], $this->errorMessages[$resultField['rule']]): $errorMessages[$resultField['field']] = $this->errorMessages[$resultField['rule']];
-                $errorMessages[$resultField['field']] = "<b>{$errorMessages[$resultField['field']]}</b>";
-            }
-            return $errorMessages;
-        }
+    public function validateGroup($groupDetails){
+
+        $validationRules = array(
+            Group_Model::TITLE => $this->predefRules['title'].'|unique,Group_Model' ,
+        );
+
+        return $this->getErrors($groupDetails, $validationRules);
+
     }
+
+
 
 
 

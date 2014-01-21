@@ -196,7 +196,7 @@ $prevEmplAddress = array(
     $county
 );
 
-$formGen = new FormGenerator('create_account', $employee->getProperty('createAction'), 'post');
+$formGen = new FormGenerator('create_account', $actionLink, 'post');
 
 // add multiple option to fields
 $formGen->setOptionToElements($prevEmplSelect, 'multiple', TRUE);

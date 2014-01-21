@@ -8,6 +8,7 @@ class Permissions_Model extends Model_Abstract{
     const GROUP = 'id_grp';
     const PAGE = 'id_page';
 
+    const DISPLAY_POST = 'display_post';
     const ADD_POST = 'add_post';
     const ADD_COMMENT = 'add_comment';
     const ADD_VOTE = 'add_vote';
@@ -16,18 +17,24 @@ class Permissions_Model extends Model_Abstract{
         parent::init(self::PRM_KEY, self::TABLE);
     }
 
-    public function createInsertArrays($values, $groupId){
-        $selectedPages = $values['pages'];
+    public function createInsertArrays($values, $groupId, $sitemap){
+        $selectedPages = (empty($values['pages']))? array(): $values['pages'];
         $insertArrays = array();
-        foreach ($selectedPages as $pageId) {
-            $insertArrays[] = array(
-                self::GROUP => $groupId,
-                self::PAGE => $pageId,
-                self::ADD_POST => $this->getCheckboxValue($values, self::ADD_POST.'-'.$pageId),
-                self::ADD_COMMENT => $this->getCheckboxValue($values, self::ADD_COMMENT.'-'.$pageId),
-                self::ADD_VOTE => $this->getCheckboxValue($values, self::ADD_VOTE.'-'.$pageId),
-            );
+        foreach ($sitemap as $section ) {
+            foreach ($section['pages'] as $pageId => $page) {
+
+                $insertArrays[] = array(
+                    self::GROUP => $groupId,
+                    self::PAGE => $pageId,
+                    self::DISPLAY_POST => (in_array($pageId, $selectedPages))? 1: 0,
+                    self::ADD_POST => $this->getCheckboxValue($values, self::ADD_POST.'-'.$pageId),
+                    self::ADD_COMMENT => $this->getCheckboxValue($values, self::ADD_COMMENT.'-'.$pageId),
+                    self::ADD_VOTE => $this->getCheckboxValue($values, self::ADD_VOTE.'-'.$pageId),
+                );
+            }
+
         }
+        //die(var_dump($insertArrays));
         return $insertArrays;
     }
 } 

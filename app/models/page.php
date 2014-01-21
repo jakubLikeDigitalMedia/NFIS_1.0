@@ -52,34 +52,35 @@ class Page_Model extends Model_Abstract{
         $group = new Group_Model();
 
         $query = "SELECT
-        ". $section->getSqlQueryField($section::TITLE) . " AS 'section_title',
         ". $section->getSqlQueryField($section::PRM_KEY) ." AS 'section_id',
         ". $section->getSqlQueryField($section::CODE) ." AS 'section_code',
+        ". $section->getSqlQueryField($section::TITLE) . " AS 'section_title',
         ". $this->getSqlQueryField(self::PRM_KEY) ." AS page_id,
-        ". $this->getSqlQueryField(self::TITLE) ." AS page_title,
         ". $this->getSqlQueryField(self::CODE) ." AS page_code,
-        ". $permissions->getSqlQueryField($permissions::GROUP) ." AS permissions_group_id,
-        ". $permissions->getSqlQueryField($permissions::ADD_POST) ." AS permissions_add_post,
-        ". $permissions->getSqlQueryField($permissions::ADD_COMMENT) ." AS permissions_add_comment,
-        ". $permissions->getSqlQueryField($permissions::ADD_VOTE) ." AS permissions_add_vote,
-        ". $group->getSqlQueryField($group::PRM_KEY).
-            "FROM ". self::TABLE ."
+        ". $this->getSqlQueryField(self::TITLE) ." AS page_title,
+        ". $permissions->getSqlQueryField($permissions::GROUP) ." AS group_id,
+        ". $permissions->getSqlQueryField($permissions::DISPLAY_POST) ." AS display_post,
+        ". $permissions->getSqlQueryField($permissions::ADD_POST) ." AS add_post,
+        ". $permissions->getSqlQueryField($permissions::ADD_COMMENT) ." AS add_comment,
+        ". $permissions->getSqlQueryField($permissions::ADD_VOTE) ." AS add_vote,
+        ". $group->getSqlQueryField($group::PRM_KEY)." AS group_id
+            FROM ". self::TABLE ."
             LEFT JOIN ". $section::TABLE ." ON ". $this->getSqlQueryField(self::SECTION) ." = ". $section->getSqlQueryField($section::PRM_KEY) ."
-            LEFT JOIN ". $permissions::TABLE ." ON ". $permissions->getSqlQueryField($permissions::PAGE) ." = ". $this->getSqlQueryField(self::PRM_KEY).
-            "LEFT JOIN `". $group::TABLE . "` ON ". $group->getSqlQueryField($group::PRM_KEY). " = ".$permissions->getSqlQueryField($permissions::GROUP);
+            LEFT JOIN ". $permissions::TABLE ." ON ". $permissions->getSqlQueryField($permissions::PAGE) ." = ". $this->getSqlQueryField(self::PRM_KEY)."
+            LEFT JOIN `". $group::TABLE . "` ON ". $group->getSqlQueryField($group::PRM_KEY). " = ".$permissions->getSqlQueryField($permissions::GROUP);
             $groupId = (is_numeric($groupId))? $groupId: 1;
-            $query .= " WHERE '".$group::PRM_KEY."' = ".$groupId;
+            $query .= " WHERE ".$group->getSqlQueryField($group::PRM_KEY)." = ".$groupId;
+            $query .= " ORDER BY `section_id`";
 
-        $query .= " ORDER BY section_id";
-
-        die($query);
+        //die($query);
         $pageList = $this->getRecords($query, 'object');
-        die(var_dump($pageList));
+        //die(var_dump($pageList));
         return $this->createSiteMap($pageList, TRUE);
 
     }
 
     private function createSiteMap($pageList, $permissions = FALSE){
+        //if (empty($pageList)) return NULL;
         $pageArray = array();
         $sectionArray = array();
         $previousSectionId = NULL;
@@ -101,10 +102,11 @@ class Page_Model extends Model_Abstract{
             $pageArray[$pageId][self::CODE] = $page->page_code;
 
             if ($permissions){
-                $pageArray[$pageId][Permissions_Model::GROUP] = $page->permissions_group_id;
-                $pageArray[$pageId][Permissions_Model::ADD_POST] = $page->permissions_add_post;
-                $pageArray[$pageId][Permissions_Model::ADD_VOTE] = $page->permissions_add_comment;
-                $pageArray[$pageId][Permissions_Model::ADD_COMMENT] = $page->permissions_add_vote;
+                $pageArray[$pageId][Permissions_Model::GROUP] = $page->group_id;
+                $pageArray[$pageId][Permissions_Model::DISPLAY_POST] = $page->display_post;
+                $pageArray[$pageId][Permissions_Model::ADD_POST] = $page->add_post;
+                $pageArray[$pageId][Permissions_Model::ADD_VOTE] = $page->add_comment;
+                $pageArray[$pageId][Permissions_Model::ADD_COMMENT] = $page->add_vote;
             }
 
             if( count($pageList) == $i){

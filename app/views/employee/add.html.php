@@ -1,3 +1,3 @@
 <?php
-$controller->getModel()->loadForm();
+$controller->getModel()->loadFormDefault($vars);
 
