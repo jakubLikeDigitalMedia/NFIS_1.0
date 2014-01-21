@@ -19,7 +19,7 @@ var_dump($inputErrors);
 var_dump($inputs);
 */
 
-$formHelper = new FormHelper(array('inputs' => $inputs, 'errors' => $inputErrors));
+$formHelper = new FormHelper(array('inputs' => $inputs, 'errors' => $errors));
 $formGen = new FormGenerator('group_create', $actionLink, 'post');
 
 echo $formGen->startFormTag();

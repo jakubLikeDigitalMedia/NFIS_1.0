@@ -44,7 +44,7 @@ class Page_Model extends Model_Abstract{
 
     }
 
-    public function getSiteMapWithPermissions(){
+    public function getSiteMapWithPermissions($groupId = NULL){
 
         $section = new Section_Model();
         $permissions = new Permissions_Model();
@@ -63,8 +63,9 @@ class Page_Model extends Model_Abstract{
         ". $permissions->getSqlQueryField($permissions::ADD_VOTE) ." AS permissions_add_vote
             FROM ". self::TABLE ."
             LEFT JOIN ". $section::TABLE ." ON ". $this->getSqlQueryField(self::SECTION) ." = ". $section->getSqlQueryField($section::PRM_KEY) ."
-            LEFT JOIN ". $permissions::TABLE ." ON ". $permissions->getSqlQueryField($permissions::PAGE) ." = ". $this->getSqlQueryField(self::PRM_KEY) ."
-            ORDER BY section_id";
+            LEFT JOIN ". $permissions::TABLE ." ON ". $permissions->getSqlQueryField($permissions::PAGE) ." = ". $this->getSqlQueryField(self::PRM_KEY);
+        if ($groupId) $query .= "WHERE ".$group::PRM_KEY." = ".(is_numeric($groupId))? $groupId: 1;
+        $query .= "ORDER BY section_id";
 
         //die($query);
         $pageList = $this->getRecords($query, 'object');

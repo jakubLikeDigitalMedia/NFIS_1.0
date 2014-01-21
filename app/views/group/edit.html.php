@@ -1,1 +1,2 @@
-view for edit action in Group </br> path: /Users/jacob/web_development/NFIS_1.0/app/views/group/edit.html.php
+<?php
+$controller->getMOdel()->loadForm($vars);

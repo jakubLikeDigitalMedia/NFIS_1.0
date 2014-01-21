@@ -1083,3 +1083,78 @@ Error message: Controller public wasn't found in /Users/jacob/web_development/NF
 File: /Users/jacob/web_development/NFIS_1.0/libs/router.php 
 Line: 120 
 *
+[2014-01-20T23:02:47+00:00]
+Error message: mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) 
+File: /home/wizard/web_development/NFIS_1.0/libs/dbmanager.php 
+Line: 39 
+*
+[2014-01-20T23:02:48+00:00]
+Error message: Controller public wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/public_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-20T23:02:48+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-20T23:04:31+00:00]
+Error message: Controller public wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/public_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-20T23:04:31+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-20T23:06:09+00:00]
+Error message: Controller public wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/public_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-20T23:06:09+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-20T23:07:33+00:00]
+Error message: Undefined variable: vars 
+File: /home/wizard/web_development/NFIS_1.0/app/views/group/edit.html.php 
+Line: 2 
+*
+[2014-01-20T23:07:33+00:00]
+Error message: Controller public wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/public_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-20T23:07:33+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-20T23:08:11+00:00]
+Error message: Undefined variable: sitemap 
+File: /home/wizard/web_development/NFIS_1.0/app/forms/group/group.php 
+Line: 41 
+*
+[2014-01-20T23:08:12+00:00]
+Error message: Controller public wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/public_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-20T23:08:12+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-20T23:11:02+00:00]
+Error message: Controller public wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/public_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-20T23:11:02+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*

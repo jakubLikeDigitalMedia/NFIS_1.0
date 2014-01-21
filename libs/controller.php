@@ -54,6 +54,13 @@ class Controller {
         return $this->viewVars;
     }
 
+    public function getParams(){
+        $sammy = Sammy::instance();
+        $uri = explode('/',$sammy->uri);
+        return (count($uri) > 2)? array_slice($uri, 3): NULL;
+
+    }
+
 
 
 } 
