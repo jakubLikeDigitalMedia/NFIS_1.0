@@ -55,13 +55,13 @@ abstract class Model_Abstract {
         else echo 'Form not found in: '.$this->formPath;
     }
 
-    public function loadForm($name, $vars = NULL){
+    public function loadForm($formName, $vars = NULL){
         if ($vars){
             foreach ($vars as $name => $value) {
                 $$name = $value;
             }
         }
-        $formPath =  $this->formsDir.'/'.$name.'.php';
+        $formPath =  $this->formsDir.'/'.$formName.'.php';
         if (file_exists($formPath)){
             include_once $formPath;
         }
