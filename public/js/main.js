@@ -26,8 +26,17 @@ $(document).ready(function(){
        }
     });
     
-    //employee table
+    //add post page - tabs
+    $('#myTab a:last').tab('show');
+    $('#media_tabs a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    });
     
-    
+    //show 'upload media' section
+    $('#add_media').on('click', function(e){
+        e.preventDefault();
+        $('#upload_media').fadeIn();
+    });
     
 });
