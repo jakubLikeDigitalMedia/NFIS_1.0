@@ -16,6 +16,7 @@ class QueryHandler {
     }
 
     public function selectQuery($query, $primaryKey, $returnType = 'array'){
+        //die($query);
         $res = $this->conn->query($query);
         if ($res){
 

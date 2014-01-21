@@ -45,12 +45,12 @@ class Group_Controller extends App_Controller{
         $params = $this->getParams();
         $groupId = (isset($params[0]))? $params[0]: NULL;
         // get title
-        $title = $this->getModel()->getRecords('SELECT '.Group_Model::TITLE.' FROM '. Group_Model::TABLE. 'WHERE '. Group_Model::PRM_KEY.' = '.$groupId, 'list');
+        $title = $this->getModel()->getRecords('SELECT '.$this->getModel()->getSqlQueryField(Group_Model::TITLE).' FROM `'. Group_Model::TABLE. '` WHERE '. Group_Model::PRM_KEY.' = '.$groupId, 'list');
         $title = (isset($title[0]))? $title[0]: '';
         $initInputs = $page->getSiteMapWithPermissions($groupId);
         $sessionInputs = $this->getModel()->getInputsFromSession();
-        $inputs['sitemap'] = (isset($sessionInputs))? $sessionInputs: $initInputs;
-        $inputs[Group_Model::TITLE] = $title;
+        $inputs = (isset($sessionInputs))? $sessionInputs: $initInputs;
+        //$inputs[Group_Model::TITLE] = $title;
         $inputErrors = $this->getModel()->getErrorsFromSession();
         $this->vars = array(
             'inputs' => $inputs,

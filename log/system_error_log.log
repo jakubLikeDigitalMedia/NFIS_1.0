@@ -1158,3 +1158,192 @@ Error message: Controller favicon.ico wasn't found in /home/wizard/web_developme
 File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
 Line: 120 
 *
+[2014-01-21T00:20:39+00:00]
+Error message: We're sorry, but an internal database error has occurred. Our system administrators have been notified and we kindly request that you try again in a little while.  Thank you for your patience. (You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 1' at line 1) 
+ SQL query  
+File: /home/wizard/web_development/NFIS_1.0/libs/query_handler.php 
+Line: 46 
+*
+[2014-01-21T00:20:39+00:00]
+Error message: Undefined variable: vars 
+File: /home/wizard/web_development/NFIS_1.0/app/views/group/edit.html.php 
+Line: 2 
+*
+[2014-01-21T00:20:40+00:00]
+Error message: Controller public wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/public_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:20:40+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:22:01+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:26:10+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:26:58+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:27:53+00:00]
+Error message: We're sorry, but an internal database error has occurred. Our system administrators have been notified and we kindly request that you try again in a little while.  Thank you for your patience. (You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1ORDER BY section_id' at line 14) 
+ SQL query  
+File: /home/wizard/web_development/NFIS_1.0/libs/query_handler.php 
+Line: 47 
+*
+[2014-01-21T00:27:53+00:00]
+Error message: Undefined variable: vars 
+File: /home/wizard/web_development/NFIS_1.0/app/views/group/edit.html.php 
+Line: 2 
+*
+[2014-01-21T00:27:53+00:00]
+Error message: Controller public wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/public_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:27:53+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:29:01+00:00]
+Error message: We're sorry, but an internal database error has occurred. Our system administrators have been notified and we kindly request that you try again in a little while.  Thank you for your patience. (You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 ORDER BY section_id' at line 14) 
+ SQL query  
+File: /home/wizard/web_development/NFIS_1.0/libs/query_handler.php 
+Line: 47 
+*
+[2014-01-21T00:29:02+00:00]
+Error message: Undefined variable: vars 
+File: /home/wizard/web_development/NFIS_1.0/app/views/group/edit.html.php 
+Line: 2 
+*
+[2014-01-21T00:29:02+00:00]
+Error message: Controller public wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/public_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:29:02+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:29:24+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:29:42+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:31:55+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:32:14+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:33:09+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:33:40+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:34:33+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:34:50+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:35:20+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:35:49+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:36:45+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:37:17+00:00]
+Error message: We're sorry, but an internal database error has occurred. Our system administrators have been notified and we kindly request that you try again in a little while.  Thank you for your patience. (Unknown column 'grp_id' in 'where clause') 
+ SQL query  
+File: /home/wizard/web_development/NFIS_1.0/libs/query_handler.php 
+Line: 47 
+*
+[2014-01-21T00:37:17+00:00]
+Error message: Undefined variable: vars 
+File: /home/wizard/web_development/NFIS_1.0/app/views/group/edit.html.php 
+Line: 2 
+*
+[2014-01-21T00:37:17+00:00]
+Error message: Controller public wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/public_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:37:17+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:38:06+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:39:44+00:00]
+Error message: Invalid argument supplied for foreach() 
+File: /home/wizard/web_development/NFIS_1.0/app/models/page.php 
+Line: 87 
+*
+[2014-01-21T00:39:44+00:00]
+Error message: Controller public wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/public_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:39:44+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:41:17+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:41:31+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*
+[2014-01-21T00:51:56+00:00]
+Error message: Controller favicon.ico wasn't found in /home/wizard/web_development/NFIS_1.0/app/controllers/favicon.ico_controller.php 
+File: /home/wizard/web_development/NFIS_1.0/libs/router.php 
+Line: 120 
+*

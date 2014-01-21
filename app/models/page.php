@@ -44,7 +44,8 @@ class Page_Model extends Model_Abstract{
 
     }
 
-    public function getSiteMapWithPermissions($groupId = NULL){
+    public function getSiteMapWithPermissions($groupId){
+        //var_dump($groupId);
 
         $section = new Section_Model();
         $permissions = new Permissions_Model();
@@ -60,16 +61,20 @@ class Page_Model extends Model_Abstract{
         ". $permissions->getSqlQueryField($permissions::GROUP) ." AS permissions_group_id,
         ". $permissions->getSqlQueryField($permissions::ADD_POST) ." AS permissions_add_post,
         ". $permissions->getSqlQueryField($permissions::ADD_COMMENT) ." AS permissions_add_comment,
-        ". $permissions->getSqlQueryField($permissions::ADD_VOTE) ." AS permissions_add_vote
-            FROM ". self::TABLE ."
+        ". $permissions->getSqlQueryField($permissions::ADD_VOTE) ." AS permissions_add_vote,
+        ". $group->getSqlQueryField($group::PRM_KEY).
+            "FROM ". self::TABLE ."
             LEFT JOIN ". $section::TABLE ." ON ". $this->getSqlQueryField(self::SECTION) ." = ". $section->getSqlQueryField($section::PRM_KEY) ."
-            LEFT JOIN ". $permissions::TABLE ." ON ". $permissions->getSqlQueryField($permissions::PAGE) ." = ". $this->getSqlQueryField(self::PRM_KEY);
-        if ($groupId) $query .= "WHERE ".$group::PRM_KEY." = ".(is_numeric($groupId))? $groupId: 1;
-        $query .= "ORDER BY section_id";
+            LEFT JOIN ". $permissions::TABLE ." ON ". $permissions->getSqlQueryField($permissions::PAGE) ." = ". $this->getSqlQueryField(self::PRM_KEY).
+            "LEFT JOIN `". $group::TABLE . "` ON ". $group->getSqlQueryField($group::PRM_KEY). " = ".$permissions->getSqlQueryField($permissions::GROUP);
+            $groupId = (is_numeric($groupId))? $groupId: 1;
+            $query .= " WHERE '".$group::PRM_KEY."' = ".$groupId;
 
-        //die($query);
+        $query .= " ORDER BY section_id";
+
+        die($query);
         $pageList = $this->getRecords($query, 'object');
-        //var_dump($resultArray);
+        die(var_dump($pageList));
         return $this->createSiteMap($pageList, TRUE);
 
     }
