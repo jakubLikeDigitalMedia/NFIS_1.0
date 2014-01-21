@@ -6,6 +6,10 @@ class Group_Controller extends App_Controller{
         echo 'index action';
     }
 
+    public function any_function_here(){
+
+    }
+
     public function add() {
         session_start();
         $page = new Page_Model();
@@ -16,54 +20,84 @@ class Group_Controller extends App_Controller{
         $actionLink = $this->actionLink->getLink('create');
 
         $this->vars = array(
-            'inputErrors' => $inputErrors,
+            'errors' => $inputErrors,
             'inputs' => $inputs,
             'sitemap' => $sitemap,
+            'edit' => FALSE,
             'actionLink' => $actionLink
         );
     }
 
     public function create() {
+        //die('create');
         session_start();
 
         $group = $this->getModel();
-        $result = $this->createGroup($_POST);
-        //die(var_dump($result));
-        if(is_string($result)){
+        $page = new Page_Model();
+        $validator = new InputValidator();
+        $result = $validator->validateGroup($_POST);
+        if ($result){
             $group->saveInputsToSession($_POST);
-            $group->saveErrorsToSession(array($group::TITLE => $result));
+            $group->saveErrorsToSession($result);
             header('Location: '.$_SERVER['HTTP_REFERER']);
-        }else{
-            header('Location: '.$this->actionLink->getLink('index'));
+            return;
         }
+        $sitemap = $page->getSiteMap();
+        $this->createGroup($_POST, $sitemap);
+        header('Location: '.$this->actionLink->getLink('index'));
     }
 
     public function edit() {
         session_start();
         $page = new Page_Model();
-        // get params from url;
-        $params = $this->getParams();
-        $groupId = (isset($params[0]))? $params[0]: NULL;
+        $this->getParams();
+        $groupId = $this->getParam(1);
         // get title
-        $title = $this->getModel()->getRecords('SELECT '.$this->getModel()->getSqlQueryField(Group_Model::TITLE).' FROM `'. Group_Model::TABLE. '` WHERE '. Group_Model::PRM_KEY.' = '.$groupId, 'list');
+        $title = $this->getModel()->getRecords('SELECT '.$this->getModel()->getSqlQueryField(Group_Model::PRM_KEY).','.$this->getModel()->getSqlQueryField(Group_Model::TITLE).' FROM `'. Group_Model::TABLE. '` WHERE '. Group_Model::PRM_KEY.' = '.$groupId, 'list');
+        // no record found
+        if (empty($title)){
+            $this->vars = array(
+                'exist' => FALSE,
+                'errorMessage' => "Group with id: $groupId doesn't exist"
+            );
+            return;
+        }
+
+        $title = array_values($title);
         $title = (isset($title[0]))? $title[0]: '';
+
         $initInputs = $page->getSiteMapWithPermissions($groupId);
         $sessionInputs = $this->getModel()->getInputsFromSession();
-        $inputs = (isset($sessionInputs))? $sessionInputs: $initInputs;
-        //$inputs[Group_Model::TITLE] = $title;
+
+        $inputs = (!empty($sessionInputs))? $sessionInputs: array(Group_Model::TITLE => $title); // pass init value if form loaded first time
         $inputErrors = $this->getModel()->getErrorsFromSession();
+
         $this->vars = array(
             'inputs' => $inputs,
             'errors' => $inputErrors,
             'sitemap' => $initInputs,
+            'edit' => TRUE,
             'actionLink' => $this->actionLink->getLink('update')
         );
 
     }
 
     public function update() {
-        // update the record
-        echo 'update action';
+        session_start();
+        $group = $this->getModel();
+        $page = new Page_Model();
+        $validator = new InputValidator();
+        $result = $validator->validateGroup($_POST);
+        if ($result){
+            $group->saveInputsToSession($_POST);
+            $group->saveErrorsToSession($result);
+            header('Location: '.$_SERVER['HTTP_REFERER']);
+            return;
+        }
+        $sitemap = $page->getSiteMap();
+        $this->createGroup($_POST, $sitemap);
+        header('Location: '.$this->actionLink->getLink('index'));
+
     }
 
     public function destroy() {
@@ -71,24 +105,23 @@ class Group_Controller extends App_Controller{
         echo 'destroy action';
     }
 
-    public function createGroup($_post){
+    public function createGroup($_post, $sitemap){
+        //die('crete group');
         $group = $this->getModel();
         $groupName = $_post[$group::TITLE];
-        // validation;
+        $this->queryHandler->startTransaction();
+        $groupId = $group->createRecord(array($group::TITLE => $groupName));
+        //adding permissions for the group
+        $permissions = new Permissions_Model();
+        $insertArrays = $permissions->createInsertArrays($_post, $groupId, $sitemap);// creating a multiple insert
 
-        if ($group->recordExist($group::TITLE, $groupName)) return 'Group with name '.$_post[$group::TITLE].' already exists';
-        else{
-            $this->queryHandler->startTransaction();
+        $permissions->createRecord($insertArrays, array('multiple_insert' => TRUE));
+        $this->queryHandler->commit();
+        return TRUE;
+    }
 
-            $groupID = $group->createRecord(array($group::TITLE => $groupName));
-            //adding permissions for the group
-            $permissions = new Permissions_Model();
-            $insertArrays = $permissions->createInsertArrays($_post, $groupID);// creating a multiple insert
-            $permissions->createRecord($insertArrays, array('multiple_insert' => TRUE));
+    public function updateGroup(){
 
-            $this->queryHandler->commit();
-            return TRUE;
-        }
     }
 
 }

@@ -11,7 +11,7 @@ class Employee_Controller extends App_Controller{
     }
 
     public function add() {
-
+        $this->vars = array('actionLink' => $this->actionLink->getLink('create'));
     }
 
     public function create() {

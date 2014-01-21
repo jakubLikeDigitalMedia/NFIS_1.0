@@ -1,2 +1,2 @@
 <?php
-$controller->getModel()->loadForm($vars);
+$controller->getModel()->loadFormDefault($vars);
