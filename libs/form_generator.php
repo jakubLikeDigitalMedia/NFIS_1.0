@@ -115,7 +115,7 @@ class FormGenerator{
                 break;
             case 'checkbox':
                  $checked = $this->getOption($element, 'checked');
-                 $checked = (!empty($disabled))? "checked=\"checked\"": '';
+                 $checked = ($checked)? "checked=\"checked\"": '';
                  $el = "<input type=\"checkbox\" id=\"$id\" class=\"$class\" name=\"{$element['name']}{$multiple}\" value=\"{$element['value']}\" $checked $disabled>";
                  $HTML .= (!empty($wrapper))? "<$wrapper>$el</$wrapper>": $el;
                  return $HTML;
