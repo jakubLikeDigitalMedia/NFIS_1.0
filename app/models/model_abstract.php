@@ -42,7 +42,7 @@ abstract class Model_Abstract {
 
     }
 
-    public function loadForm($vars = NULL){
+    public function loadFormDefault($vars = NULL){
         if ($vars){
             foreach ($vars as $name => $value) {
                 $$name = $value;
@@ -53,6 +53,20 @@ abstract class Model_Abstract {
             include_once $this->formPath;
         }
         else echo 'Form not found in: '.$this->formPath;
+    }
+
+    public function loadForm($name, $vars = NULL){
+        if ($vars){
+            foreach ($vars as $name => $value) {
+                $$name = $value;
+            }
+        }
+        $formPath =  $this->formsDir.'/'.$name.'.php';
+        if (file_exists($formPath)){
+            include_once $formPath;
+        }
+        else echo 'Form not found in: '.$formPath;
+
     }
 
     public function getSqlQueryField($fieldName){
