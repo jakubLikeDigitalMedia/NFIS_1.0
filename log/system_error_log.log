@@ -1584,3 +1584,468 @@ Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/
 File: C:\xampp\htdocs\NFIS_test\libs\router.php 
 Line: 120 
 *
+[2014-01-21T19:18:58+01:00]
+Error message: mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) 
+File: C:\xampp\htdocs\NFIS_test\libs\dbmanager.php 
+Line: 39 
+*
+[2014-01-21T19:19:00+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:19:13+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:20:06+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:21:08+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:21:28+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:25:13+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:25:30+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:26:15+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:28:52+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:29:05+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:35:56+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:36:00+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:36:38+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:36:43+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:39:52+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:41:05+01:00]
+Error message: Undefined variable: where 
+File: C:\xampp\htdocs\NFIS_test\app\models\employee.php 
+Line: 146 
+*
+[2014-01-21T19:41:08+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:41:38+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:42:34+01:00]
+Error message: Controller form wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/form_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:42:37+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:45:44+01:00]
+Error message: Controller form wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/form_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:45:47+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:48:30+01:00]
+Error message: Controller form wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/form_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:48:33+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:49:18+01:00]
+Error message: Controller form wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/form_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:49:21+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:49:27+01:00]
+Error message: Controller form wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/form_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:49:34+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:49:40+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:50:27+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:51:52+01:00]
+Error message: Object of class ActionLink could not be converted to string 
+File: C:\xampp\htdocs\NFIS_test\app\forms\employee\add_employee_to_group.php 
+Line: 98 
+*
+[2014-01-21T19:51:55+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:53:18+01:00]
+Error message: Object of class ActionLink could not be converted to string 
+File: C:\xampp\htdocs\NFIS_test\app\forms\employee\add_employee_to_group.php 
+Line: 98 
+*
+[2014-01-21T19:53:21+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:53:43+01:00]
+Error message: Object of class ActionLink could not be converted to string 
+File: C:\xampp\htdocs\NFIS_test\app\forms\employee\add_employee_to_group.php 
+Line: 98 
+*
+[2014-01-21T19:53:45+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:54:04+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:54:33+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:54:51+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:55:28+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:56:12+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:56:21+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:56:34+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T19:58:53+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:01:05+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:01:40+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:02:00+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:02:18+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:03:08+01:00]
+Error message: Missing argument 1 for Model_Abstract::loadForm(), called in C:\xampp\htdocs\NFIS_test\app\views\employee\add.html.php on line 2 and defined 
+File: C:\xampp\htdocs\NFIS_test\app\models\model_abstract.php 
+Line: 58 
+*
+[2014-01-21T20:03:11+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:03:18+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:04:18+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:04:19+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:04:22+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:04:45+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:05:02+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:05:34+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:05:53+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:06:55+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:07:08+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:07:18+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:07:21+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:07:25+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:07:27+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:07:28+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:07:32+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:07:34+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:07:37+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:07:39+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:07:41+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:09:42+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:09:45+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:09:46+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:09:48+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:09:50+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:10:38+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:10:39+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:10:42+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:10:49+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:10:54+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:16:55+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:18:16+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:18:34+01:00]
+Error message: Undefined variable: formActionLink 
+File: C:\xampp\htdocs\NFIS_test\app\forms\employee\add_employee_to_group.php 
+Line: 90 
+*
+[2014-01-21T20:18:37+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:19:43+01:00]
+Error message: Undefined variable: controller 
+File: C:\xampp\htdocs\NFIS_test\app\forms\employee\add_employee_to_group.php 
+Line: 90 
+*
+[2014-01-21T20:19:46+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:21:43+01:00]
+Error message: Undefined variable: formActionLink 
+File: C:\xampp\htdocs\NFIS_test\app\forms\employee\add_employee_to_group.php 
+Line: 90 
+*
+[2014-01-21T20:21:47+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:21:56+01:00]
+Error message: Undefined variable: controller 
+File: C:\xampp\htdocs\NFIS_test\app\forms\employee\add_employee_to_group.php 
+Line: 90 
+*
+[2014-01-21T20:21:59+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
+[2014-01-21T20:23:05+01:00]
+Error message: Undefined variable: formActionLink 
+File: C:\xampp\htdocs\NFIS_test\app\forms\employee\add_employee_to_group.php 
+Line: 90 
+*
+[2014-01-21T20:23:08+01:00]
+Error message: Controller favicon.ico wasn't found in C:\xampp\htdocs\NFIS_test/app/controllers/favicon.ico_controller.php 
+File: C:\xampp\htdocs\NFIS_test\libs\router.php 
+Line: 120 
+*
