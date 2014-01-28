@@ -112,8 +112,9 @@ class InputValidator extends GUMP{
             return;
         }
 
-        $model = new $param();
-        if ($model->recordExist($model::TITLE,$input[$field]))
+        list($model, $property) = explode('::', $param);
+        $model = new $model();
+        if ($model->recordExist($property, $input[$field]))
             return $this->getResultArray($field, $input[$field], __FUNCTION__, $param);
 
     }
@@ -188,10 +189,12 @@ class InputValidator extends GUMP{
 
     }
 
-    public function validateGroup($groupDetails){
+    public function validateGroup($groupDetails, $unique = TRUE){
+
+        $unique = (!$unique)? '': '|unique,Group_Model::'.Group_Model::TITLE;
 
         $validationRules = array(
-            Group_Model::TITLE => $this->predefRules['title'].'|unique,Group_Model' ,
+            Group_Model::TITLE => $this->predefRules['title'].$unique ,
         );
 
         return $this->getErrors($groupDetails, $validationRules);
