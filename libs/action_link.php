@@ -16,6 +16,8 @@ class ActionLink {
     protected $destroyAction;
     protected $add_employee_to_groupAction;
 
+    private $controllerName;
+
     public function __construct($controller){
 
         $this->indexAction = $controller . '/index';
@@ -26,15 +28,15 @@ class ActionLink {
         $this->destroyAction = $controller . '/destroy';
         
         $this->add_employee_to_groupAction = $controller . '/add_employee_to_group';
+
+        $this->controllerName = $controller;
     }
 
 
     public function getLink($action, $secure = FALSE){
-        $action = $action.'Action';
-        if (property_exists($this, $action)){
-            return ($secure)? SECURE_URL.'/'.$this->{$action}: UNSECURE_URL.'/'.$this->{$action};
-        }
-        else return NULL;
+        $actionLink = $this->controllerName.'/'.$action;
+        return ($secure)? SECURE_URL.'/'.$actionLink: UNSECURE_URL.'/'.$actionLink;
+
     }
 
 } 
