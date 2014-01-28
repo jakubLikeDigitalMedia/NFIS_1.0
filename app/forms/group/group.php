@@ -7,8 +7,7 @@
  */
 
 
-
-if(!$exist){
+if(isset($exist) && $exist == FALSE){
     echo "<h1>$errorMessage</h1>";
     return;
 }
@@ -38,8 +37,8 @@ foreach($sitemap as $sectionId => $section){
         $title = $page[Page_Model::TITLE];
         $code = $page[Page_Model::CODE];
 
-        $displayPostOption = array('class' => 'section_page', 'multiple' => TRUE);
-        $baseOption = array('class' => 'section_page');
+        $displayPostOption = array('class' => 'display', 'multiple' => TRUE);
+        $baseOption = array('class' => 'section_page permission');
         $addPostOption = $baseOption;
         $addCommentOption = $baseOption;
         $addVoteOption = $baseOption;
@@ -71,11 +70,11 @@ foreach($sitemap as $sectionId => $section){
                 //$disabled = array($addPostOption, $addCommentOption, $addVoteOption);
                // $formGen->setOptionToElements($disabled, 'disabled', TRUE);
                 $addPostOption['checked'] = TRUE;
-                //$addPostOption['disabled'] = TRUE;
+                $addPostOption['disabled'] = TRUE;
                 $addCommentOption['checked'] = TRUE;
-                //$addCommentOption['disabled'] = TRUE;
+                $addCommentOption['disabled'] = TRUE;
                 $addVoteOption['checked'] = FALSE;
-                //$addVoteOption['disabled'] = TRUE;
+                $addVoteOption['disabled'] = TRUE;
 
                // die(var_dump($addPostOption));
             }
@@ -84,7 +83,8 @@ foreach($sitemap as $sectionId => $section){
 
 
         //(isset($inputs[Permissions_Model::ADD_POST.'-'.$pageId]))? $
-
+        //echo '<span>Select Display Rules</span>';
+        //echo '<div class="option-container">';
         echo "<li><ul style='display: inline;'>";
         echo "<li $style>$title </li>";
         echo "<li $style>" . $formGen->createElement('checkbox', 'Display', 'pages', $pageId, $displayPostOption);
@@ -92,10 +92,11 @@ foreach($sitemap as $sectionId => $section){
         echo "<li $style>" . $formGen->createElement('checkbox', 'Add comment', Permissions_Model::ADD_COMMENT .'-'. $pageId, '1', $addCommentOption) . "</li>";
         echo "<li $style>" . $formGen->createElement('checkbox', 'Add vote', Permissions_Model::ADD_VOTE .'-'. $pageId, '1', $addVoteOption) . "</li>";
         echo "</ul></li>";
+       // echo '</div>';
     }
     echo '</ol>';
 }
-
+if($edit) echo '<input type="hidden" name="'.Group_Model::PRM_KEY.'" value="'.$groupId.'">';
 echo "</form>";
 $group = new Group_Model();
 $group->unsetSession();
