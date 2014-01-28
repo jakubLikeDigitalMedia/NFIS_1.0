@@ -50,17 +50,19 @@ class Employee_Controller extends App_Controller{
     }
     
     public function add_employee_to_group() {
-        $formActionLink = $this->getModel()->getProperty('add_employee_to_group');
-        
+        $this->vars = array('actionLink' => $this->actionLink->getLink('add_employee_to_group'));
         if(!empty($_POST['group_employee']) && isset($_POST['add_to_group'])){
-        $employees = $_POST['group_employee'];
-        $group_id = $_POST['add_to_group'];
-        $employee->updateMultipleValues($employees, $group_id);
-    }
+            $employees = $_POST['group_employee'];
+            $group_id = $_POST['add_to_group'];
+            $this->getModel()->updateMultipleValues($employees, $group_id);
+            
+            header('location: '.UNSECURE_URL.'/employee/add_employee_to_group/updated');
+        }
 
-    if(!empty($_POST['category']) && !empty($_POST['filter_by'])){
-        echo $employee->getEmployeesList($_POST['category'], $_POST['filter_by']);
-    }
+        if(!empty($_POST['category']) && !empty($_POST['filter_by'])){
+            echo $employee->getEmployeesList($_POST['category'], $_POST['filter_by']);
+        }
+        $postResult = $this->getParam(1);
     }
 
     /*
