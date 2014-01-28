@@ -21,10 +21,13 @@ abstract class Model_Abstract {
     protected $formPath;
 
     public $actionLink;
-
+    
+    public $userId;
 
 
     protected function init($primaryKey, $dbTable){
+        
+        $this->userId = 57;
 
         $this->primaryKey = $primaryKey;
         $this->DbTable = $dbTable;
@@ -152,7 +155,7 @@ abstract class Model_Abstract {
     //==========================================================================================
 
     public function updateMultipleValues($values, $column){
-        $dbc = new DbQueryManager();
+        $dbc = new QueryHandler();
         foreach($values as $value){
             $column_values[$column . '-' . $value] = $value;
         }

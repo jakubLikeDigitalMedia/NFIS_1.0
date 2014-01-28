@@ -1,5 +1,7 @@
 $(document).ready(function(){
-
+    var rootPath = location.protocol + "//" + location.hostname;
+      var loading = $('<img class="loading" src="'+rootPath + '/public/images/libs/lightbox/loading.gif" />');
+    
     // adding new blocks for previous employment
     $('#add-previous-options').click(function(){
        $('div.add-block').append($('div.original').clone().removeClass('original').show());
@@ -10,6 +12,17 @@ $(document).ready(function(){
         var parent = $(this).parent('div.new-block');
         ($('div.new-block').length > 1)? parent.remove(): parent.hide();
     });
+    
+    //dynatable
+    $('#processing-indicator-nice-example').dynatable({
+        inputs: {
+          processingText: 'Loading <img src="/images/loading.gif" />'
+        }
+      });
+      
+      $('#add_employee_to_group').find('checkbox').on('change',function(){
+         dynatable.dataset.settings.originalRecords[$]
+      });
     
     //disabling / enabling checkboxes in group permissions
     
@@ -25,18 +38,5 @@ $(document).ready(function(){
           $(this).parent().nextAll().find('input[type="checkbox"]').attr('disabled','disabled');
        }
     });
-    
-    //add post page - tabs
-    $('#myTab a:last').tab('show');
-    $('#media_tabs a').click(function (e) {
-      e.preventDefault();
-      $(this).tab('show');
-    });
-    
-    //show 'upload media' section
-    $('#add_media').on('click', function(e){
-        e.preventDefault();
-        $('#upload_media').fadeIn();
-    });
-    
+     
 });

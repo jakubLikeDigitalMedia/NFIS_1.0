@@ -149,7 +149,6 @@ class Router{
         foreach($classInstance->getViewVars() as $varName => $value){
             $$varName = $value;
         }
-
         if (file_exists($controllerViewPath)) include_once $controllerViewPath;
         else{
             throw new SystemException("View $action . $format.php wasn't found in $controllerViewPath");

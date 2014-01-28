@@ -16,7 +16,6 @@ function app_error_handler(
 {
     $customErrorMsg = 'We are sory , but an unexpected error has occured during performing your action.';
     throw new SystemException($customErrorMsg, $in_errstr, $in_errfile, $in_errline);
-
 }
 
 function app_exception_handler($exception){

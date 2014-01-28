@@ -9,8 +9,13 @@ and open the template in the editor.
 */
 
 //Including reset CSS (by Eric Mayer)
+$libs_path: "libs/";
+
 @import "_reset_min.css";
-@import "bootstrap.css";
+@import url("#{$libs_path}bootstrap.css");
+@import url("#{$libs_path}uploadify.css");
+@import url("#{$libs_path}lightbox.css");
+@import url("#{$libs_path}jquery.Jcrop.min.css");
 
 //initial styles displaying table in admin/employee/employee_ad_to_group.php
 
@@ -30,8 +35,36 @@ and open the template in the editor.
 
 //image tab
 
-#images_tab ul li{
+#images_tab ul li, #gallery_tab ul li{
     display: inline-block;
     float: left;
     padding-left: 20px;
+}
+
+#images_tab img{
+    display:block;
+}
+
+#images_tab input.submit{ //can't use input[type="submit"] because of IE8 
+    display:none;
+}
+
+// "add employee to group" page
+.dynatable-processing {
+  background: #000;
+  opacity: 0.6;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.dynatable-processing span {
+  background: #FFF;
+  border: solid 2px #57A957;
+  color: #333;
+  padding: 25px;
+  font-size: 2em;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+}
+.dynatable-processing span img {
+  vertical-align: middle;
 }

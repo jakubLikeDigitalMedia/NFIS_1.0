@@ -13,4 +13,9 @@ class Video_Model extends Model_Abstract{
     public function __construct(){
         parent::init(self::PRM_KEY, self::TABLE);
     }
+    
+    public function insertVideo($video_code){
+        $dbc = new QueryHandler();
+        $dbc->insert($video_code, $this::TABLE);
+    }
 } 

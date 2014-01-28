@@ -14,7 +14,7 @@ class ActionLink {
     protected $editAction;
     protected $updateAction;
     protected $destroyAction;
-    protected $add_employee_to_group;
+    protected $add_employee_to_groupAction;
 
     public function __construct($controller){
 
@@ -25,7 +25,7 @@ class ActionLink {
         $this->updateAction = $controller . '/update';
         $this->destroyAction = $controller . '/destroy';
         
-        $this->add_employee_to_group = $controller . '/add_employee_to_group';
+        $this->add_employee_to_groupAction = $controller . '/add_employee_to_group';
     }
 
 

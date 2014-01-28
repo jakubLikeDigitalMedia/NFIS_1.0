@@ -99,11 +99,10 @@ class QueryHandler {
         if (empty($options)){
              list($columns, $values) = $this->escapeValues($updateValues);
              $newValues = array();
-             for($i = 0; $i < count($columns)-1; $i++){
-                 $newValues[] = ' ' . $columns[$i] . '=' . $values[$i];
+             for($i = 0; $i < count($columns); $i++){
+                 $newValues[] = ' ' . $columns[$i] . '="' . $values[$i]. '"';
              }
-             
-            $query = "UPDATE $table SET (".implode(',', $newValues).") WHERE (".implode(',', $conditions).")";
+            $query = "UPDATE $table SET ".((count($newValues)>1)?implode(',', $newValues):$newValues[0])." WHERE (".((count($conditions)>1)?implode(',', $conditions):$conditions[0]).")";
         }
 
         if (isset($options['multiple_update_one']) && $options['multiple_update_one'] === TRUE){

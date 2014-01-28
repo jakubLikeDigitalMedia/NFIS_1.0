@@ -71,8 +71,8 @@ $locationSelect = array(
 $addToGroupSelect = $group::TITLE;
 $addToGroupSelect = array(
     'type' => 'select',
-    'label' => 'Show group',
-    'name' => $addToGroupSelect,
+    'label' => 'Add to group',
+    'name' => 'add_to_group',
     'value' => array('values' => $groupList, 'selected' => $formHelper->getFieldValue($addToGroupSelect)),
     'options' => array('error' => $formHelper->getFieldError($addToGroupSelect))
 );
@@ -86,8 +86,8 @@ $addToGroupSelect = $formGen->renderElements($formGen->createElements(array($add
 
 
 ?>
-
-<form method="post" action="<?php echo $formActionLink; ?>">
+<p></p>
+<form method="post" action="<?php echo $actionLink; ?>">
     
         <ul id="filter_by_value">
             <li><?php echo $groupSelect; ?></li>
@@ -116,17 +116,24 @@ $addToGroupSelect = $formGen->renderElements($formGen->createElements(array($add
 </form>
 <script>
     $(function(){
+        function sortJSON(data, key) {
+    return data.sort(function(a, b) {
+        var x = a[key]; var y = b[key];
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
+    }
+        var rcrds = sortJSON(<?php echo $this->getEmployee_ModelsList('id_group','all'); ?>,'index');
     dynatable = $("#add_employee_to_group").dynatable({
             dataset: {
-               records: <?php echo $this->getEmployee_ModelsList('id_group','all'); ?>,
+               records: rcrds,
             },
             features: {
-             sorting: false
            },
            inputs: {
              queries: $('#group_select, #brand_select, #position_select, #location_select, #department_select')
            }
         }).data('dynatable');
-       
+        
+       //console.log(dynatable.settings.dataset.originalRecords.index.sort());
     });
 </script>

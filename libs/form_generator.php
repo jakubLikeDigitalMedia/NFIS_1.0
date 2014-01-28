@@ -107,7 +107,7 @@ class FormGenerator{
                 $options = $element['value']['values'];
                 if (is_array($options)){
                     $initVal = (empty($options))? 'No options are available': 'Select value';
-                    $selectOptions = '<option value="'.(($optionsTextValues=="true")?'all':0).'">'.$initVal.'</option>';
+                    $selectOptions = '<option value="'.(($optionsTextValues=="true")?'':0).'">'.$initVal.'</option>';
                     $selected = $element['value']['selected'];
                     foreach($options as $key => $option){
                         $selectOptions .= (!empty($selected) && $selected == $key)? '<option value="'.(($optionsTextValues=="true")?$option:$key).'" selected="selected">'.$option.'</option>': '<option value="'.(($optionsTextValues=="true")?$option:$key).'">'.$option.'</option>';
@@ -120,6 +120,11 @@ class FormGenerator{
                  $checked = $this->getOption($element, 'checked');
                  $checked = ($checked)? "checked=\"checked\"": '';
                  $el = "<input type=\"checkbox\" id=\"$id\" class=\"$class\" name=\"{$element['name']}{$multiple}\" value=\"{$element['value']}\" $checked $disabled>";
+                 $HTML .= (!empty($wrapper))? "<$wrapper>$el</$wrapper>": $el;
+                 return $HTML;
+                 break;
+           case 'textarea':
+                 $el = "<textarea id=\"$id\" class=\"$class\" name=\"{$element['name']}{$multiple}\"></textarea>";
                  $HTML .= (!empty($wrapper))? "<$wrapper>$el</$wrapper>": $el;
                  return $HTML;
                  break;

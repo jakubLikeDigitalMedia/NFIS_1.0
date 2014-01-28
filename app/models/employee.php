@@ -148,8 +148,11 @@ class Employee_Model extends Model_Abstract{
         $dbc = new QueryHandler();
         $result = $dbc->selectQuery($query, $this::PRM_KEY);
         $resultCopy = $result;
+        $index = 0;
         foreach($result as $id => $value){
-            $resultCopy[$id]['add'] = "<input type='checkbox' name='group_employee[]' value='$id'>";
+            $resultCopy[$id]['add'] = "<input type='checkbox' name='group_employee[]' value='$id' data-order='$index'>";
+            $resultCopy[$id]['index'] = $index;
+            $index++;
         }
         return json_encode(array_values($resultCopy));
     }

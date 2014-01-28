@@ -1,0 +1,1 @@
+view for index action in post </br> path: C:\xampp\htdocs\NFIS_test\app\views/post/index.html.php

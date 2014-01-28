@@ -35,5 +35,6 @@ include_once 'gump.class.php';
 include_once 'input_validator.php';
 include_once 'form_generator.php';
 include_once 'form_helper.php';
+include_once 'image_uploader.php';
 
 include_once CONFIG.'/routes.php';
