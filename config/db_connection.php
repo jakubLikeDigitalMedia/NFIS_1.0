@@ -17,7 +17,7 @@ if ($_SERVER['SERVER_NAME'] == 'nfis.com'){
 else{
     define('DB_HOST', 'localhost');
     define('DB_USER', 'root');
-    define('DB_PASS', 'admin');
+    define('DB_PASS', 'root');
     define('DB_DBASE', 'nobel_NFIS_DB');
 
 }
