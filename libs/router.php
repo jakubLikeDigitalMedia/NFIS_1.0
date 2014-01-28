@@ -108,7 +108,7 @@ class Router{
         }
 
         // load layout
-        $layoutPath = self::getLayout($controller, $action, $format);
+        $layoutPath = self::getLayout($controller, $action, $format, $classInstance);
         if (!empty($layoutPath)) include_once $layoutPath;
 
     }
@@ -161,8 +161,10 @@ class Router{
         return ob_get_clean();
     }
 
-    private static function getLayout($controller, $action, $format){
+    private static function getLayout($controller, $action, $format, $classInstance){
 
+        // custom layout
+        $customLayout = LAYOUTS.'/'.$classInstance->layout.'.'.$format.'.php';
         // controller-action.format.php
         $controllerActionPath = LAYOUTS.'/'.$controller.'-'.$action.'.'.$format.'.php';
         // controller.format.php
@@ -177,8 +179,8 @@ class Router{
         */
 
         $layoutPath = NULL;
-
-        if (file_exists($controllerActionPath)) $layoutPath = $controllerActionPath;
+        if (file_exists($customLayout)) $layoutPath = $customLayout;
+        elseif (file_exists($controllerActionPath)) $layoutPath = $controllerActionPath;
         elseif (file_exists($controllerPath)) $layoutPath = $controllerPath;
         elseif (file_exists($applicationPath)) $layoutPath = $applicationPath;
 

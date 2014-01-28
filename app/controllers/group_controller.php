@@ -45,6 +45,7 @@ class Group_Controller extends App_Controller{
         $sitemap = $page->getSiteMap();
         $this->createGroup($_POST, $sitemap);
         header('Location: '.$this->actionLink->getLink('index'));
+        return;
     }
 
     public function edit() {
@@ -52,33 +53,44 @@ class Group_Controller extends App_Controller{
         $page = new Page_Model();
         $this->getParams();
         $groupId = $this->getParam(1);
-        // get title
-        $title = $this->getModel()->getRecords('SELECT '.$this->getModel()->getSqlQueryField(Group_Model::PRM_KEY).','.$this->getModel()->getSqlQueryField(Group_Model::TITLE).' FROM `'. Group_Model::TABLE. '` WHERE '. Group_Model::PRM_KEY.' = '.$groupId, 'list');
-        // no record found
-        if (empty($title)){
+        if (empty($groupId)){
             $this->vars = array(
                 'exist' => FALSE,
-                'errorMessage' => "Group with id: $groupId doesn't exist"
+                'errorMessage' => "No group id selected"
             );
             return;
         }
+        else{
+            // get title
+            $title = $this->getModel()->getRecords('SELECT '.$this->getModel()->getSqlQueryField(Group_Model::PRM_KEY).','.$this->getModel()->getSqlQueryField(Group_Model::TITLE).' FROM `'. Group_Model::TABLE. '` WHERE '. Group_Model::PRM_KEY.' = '.$groupId, 'list');
+            if (empty($title)){
+                $this->vars = array(
+                    'exist' => FALSE,
+                    'errorMessage' => "Group with id: $groupId doesn't exist"
+                );
+                return;
+            }
+            else{
+                $title = array_values($title);
+                $title = (isset($title[0]))? $title[0]: '';
+                $_SESSION[Group_Model::TITLE] = $title;
+                $initInputs = $page->getSiteMapWithPermissions($groupId);
+                $sessionInputs = $this->getModel()->getInputsFromSession();
 
-        $title = array_values($title);
-        $title = (isset($title[0]))? $title[0]: '';
+                $inputs = (!empty($sessionInputs))? $sessionInputs: array(Group_Model::TITLE => $title); // pass init value if form loaded first time
+                $inputErrors = $this->getModel()->getErrorsFromSession();
 
-        $initInputs = $page->getSiteMapWithPermissions($groupId);
-        $sessionInputs = $this->getModel()->getInputsFromSession();
-
-        $inputs = (!empty($sessionInputs))? $sessionInputs: array(Group_Model::TITLE => $title); // pass init value if form loaded first time
-        $inputErrors = $this->getModel()->getErrorsFromSession();
-
-        $this->vars = array(
-            'inputs' => $inputs,
-            'errors' => $inputErrors,
-            'sitemap' => $initInputs,
-            'edit' => TRUE,
-            'actionLink' => $this->actionLink->getLink('update')
-        );
+                $this->vars = array(
+                    'inputs' => $inputs,
+                    'errors' => $inputErrors,
+                    'sitemap' => $initInputs,
+                    'edit' => TRUE,
+                    'exist' => TRUE,
+                    'groupId' => $groupId,
+                    'actionLink' => $this->actionLink->getLink('update')
+                );
+            }
+        }
 
     }
 
@@ -87,16 +99,17 @@ class Group_Controller extends App_Controller{
         $group = $this->getModel();
         $page = new Page_Model();
         $validator = new InputValidator();
-        $result = $validator->validateGroup($_POST);
+        $result = $validator->validateGroup($_POST, FALSE);
         if ($result){
             $group->saveInputsToSession($_POST);
             $group->saveErrorsToSession($result);
             header('Location: '.$_SERVER['HTTP_REFERER']);
             return;
         }
-        $sitemap = $page->getSiteMap();
-        $this->createGroup($_POST, $sitemap);
+        $permissions = new Permissions_Model();
+        $permissions->update($_POST);
         header('Location: '.$this->actionLink->getLink('index'));
+        die();
 
     }
 
@@ -109,19 +122,20 @@ class Group_Controller extends App_Controller{
         //die('crete group');
         $group = $this->getModel();
         $groupName = $_post[$group::TITLE];
+
         $this->queryHandler->startTransaction();
+
         $groupId = $group->createRecord(array($group::TITLE => $groupName));
         //adding permissions for the group
         $permissions = new Permissions_Model();
         $insertArrays = $permissions->createInsertArrays($_post, $groupId, $sitemap);// creating a multiple insert
 
         $permissions->createRecord($insertArrays, array('multiple_insert' => TRUE));
+
         $this->queryHandler->commit();
         return TRUE;
     }
 
-    public function updateGroup(){
 
-    }
 
 }

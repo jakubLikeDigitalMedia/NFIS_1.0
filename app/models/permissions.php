@@ -37,4 +37,34 @@ class Permissions_Model extends Model_Abstract{
         //die(var_dump($insertArrays));
         return $insertArrays;
     }
+
+    public function update($_post){
+        $group = new Group_Model();
+        $groupId = $_post[$group::PRM_KEY];
+        $groupTitle = $_post[$group::TITLE];
+        $query = 'UPDATE `'.$group::TABLE.'` SET '.$group->getSqlQueryField($group::TITLE).' = \''.$groupTitle.'\' WHERE '.$group->getSqlQueryField($group::PRM_KEY).' = '.$groupId.';';
+        $pagesToUpdate = $_post['pages'];
+        foreach($pagesToUpdate as $pageId){
+            $values = array(
+                self::DISPLAY_POST => 1,
+                self::ADD_POST => isset($_post[self::ADD_POST.'-'.$pageId])? 1: 0,
+                self::ADD_COMMENT => isset($_post[self::ADD_COMMENT.'-'.$pageId])? 1: 0,
+                self::ADD_VOTE => isset($_post[self::ADD_VOTE.'-'.$pageId])? 1: 0,
+            );
+            list($columns, $values) = $this->queryHandler->escapevalues($values);
+
+            for ($i = 0; $i <= count($columns)-1; $i++) {
+                $values[$i] = $columns[$i].' = '.$values[$i];
+            }
+
+            $query .= 'UPDATE '.self::TABLE.' SET '.implode(',',$values).' WHERE '.$this->getSqlQueryField(self::GROUP).' = '.$groupId.' AND '.$this->getSqlQueryField(self::PAGE).' = '.$pageId.';';
+
+        }
+        //die($query);
+
+        $this->queryHandler->startTransaction();
+        $this->queryHandler->multiQuery($query);
+        $this->queryHandler->commit();
+
+    }
 } 

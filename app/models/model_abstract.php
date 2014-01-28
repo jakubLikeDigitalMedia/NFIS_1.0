@@ -15,7 +15,7 @@ abstract class Model_Abstract {
     protected $modelName;
     protected $modelFileName;
 
-    protected $queryHandler;
+    public $queryHandler;
     
     protected $formsDir;
     protected $formPath;
@@ -122,7 +122,7 @@ abstract class Model_Abstract {
     }
 
     public function recordExist($property, $value){
-        $query =  "SELECT `{$this->primaryKey}`, $property FROM `{$this->DbTable}` WHERE `$property` = '$value'";
+        $query =  'SELECT `'.$this->primaryKey.'`, `'.$property.'` FROM `'.$this->DbTable.'` WHERE `'.$property.'` = \''.$value.'\'';
         $result = $this->queryHandler->selectQuery($query, $this->primaryKey, 'list');
         return (boolean)sizeof($result) > 0;
     }

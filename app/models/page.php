@@ -35,9 +35,9 @@ class Page_Model extends Model_Abstract{
         ". $this->getSqlQueryField(self::PRM_KEY) ." AS page_id,
         ". $this->getSqlQueryField(self::TITLE) ." AS page_title,
         ". $this->getSqlQueryField(self::CODE) ." AS page_code
-            FROM ". self::TABLE ."
-            LEFT JOIN ". $section::TABLE ." ON ". $this->getSqlQueryField(self::SECTION) ." = ". $section->getSqlQueryField($section::PRM_KEY) ."
-            ORDER BY section_id";
+        FROM ". self::TABLE ."
+        LEFT JOIN ". $section::TABLE ." ON ". $this->getSqlQueryField(self::SECTION) ." = ". $section->getSqlQueryField($section::PRM_KEY)."
+        ORDER BY section_id";
         //die($query);
         $pageList = $this->getRecords($query, 'object');
         return $this->createSiteMap($pageList);
@@ -105,8 +105,9 @@ class Page_Model extends Model_Abstract{
                 $pageArray[$pageId][Permissions_Model::GROUP] = $page->group_id;
                 $pageArray[$pageId][Permissions_Model::DISPLAY_POST] = $page->display_post;
                 $pageArray[$pageId][Permissions_Model::ADD_POST] = $page->add_post;
-                $pageArray[$pageId][Permissions_Model::ADD_VOTE] = $page->add_comment;
-                $pageArray[$pageId][Permissions_Model::ADD_COMMENT] = $page->add_vote;
+                $pageArray[$pageId][Permissions_Model::ADD_COMMENT] = $page->add_comment;
+                $pageArray[$pageId][Permissions_Model::ADD_VOTE] = $page->add_vote;
+
             }
 
             if( count($pageList) == $i){
