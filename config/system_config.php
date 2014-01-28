@@ -14,7 +14,20 @@ define('CONTROLLERS', APP_PATH.'/controllers');
 define('MODELS', APP_PATH.'/models');
 define('VIEWS', APP_PATH.'/views');
 define('FORMS', APP_PATH.'/forms');
+
+// layouts
 define('LAYOUTS', APP_PATH.'/layouts');
+define('LAYOUTS_FRONT',  '/frontend');
+define('LAYOUTS_BACK', '/backend');
+
+//templates
+define('TEMPLATES', APP_PATH.'/templates/');
+define('TEMPLATES_FRONT', TEMPLATES.'/frontend');
+define('TEMPLATES_BACK', TEMPLATES.'/backend');
+define('TEMPLATES_FRONT_DEFAULT', TEMPLATES_FRONT.'/default');
+define('TEMPLATES_BACK_DEFAULT', TEMPLATES_BACK.'/default');
+
+
 define('LOG_FILE', BASE_PATH.'/log/system_error_log.log');
 
 // urls
